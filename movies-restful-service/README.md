@@ -1,6 +1,6 @@
 # Movies RestFul WebService
 
-## Run the app in your local
+## How to Run the app?
 
 - Run the below command in your machine. You must have java8 or higher to run this application.
 
