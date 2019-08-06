@@ -1,5 +1,13 @@
 # Movies RestFul WebService
 
+## Run the app in your local
+
+- Run the below command in your machine. You must have java8 or higher to run this application.
+
+```
+java -jar movies-restful-service.jar
+```
+
 ## Swagger Link
 
 The below link will launch the swagger of the movies-restful-web-service.
