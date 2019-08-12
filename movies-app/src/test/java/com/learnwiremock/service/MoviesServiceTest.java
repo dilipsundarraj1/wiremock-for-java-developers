@@ -2,7 +2,10 @@ package com.learnwiremock.service;
 
 import com.learnwiremock.dto.Movie;
 import com.learnwiremock.exception.MovieErrorResponse;
+import com.learnwiremock.helper.TestHelper;
 import org.junit.jupiter.api.*;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import java.time.LocalDate;
@@ -16,10 +19,10 @@ public class MoviesServiceTest {
     MoviesRestClient moviesRestClient = null;
     WebClient webClient;
 
-
     @BeforeEach
     void setUp() {
         int port = 8081;
+        System.out.println("Movies Port : " + port);
         final String baseUrl = String.format("http://localhost:%s", port);
         webClient = WebClient.create();
         moviesRestClient = new MoviesRestClient(baseUrl, webClient);
@@ -28,7 +31,6 @@ public class MoviesServiceTest {
 
     @Test
     void getAllMovies() {
-
         //when
         List<Movie> movieList = moviesRestClient.retrieveAllMovies();
         System.out.println("movieList : " + movieList);
@@ -144,7 +146,7 @@ public class MoviesServiceTest {
 
         //then
         String updatedCastName = "Christian Bale, Heath Ledger , Michael Caine, Tom Hardy";
-        assertEquals(updatedCastName, updatedMovie.getCast());
+        assertTrue(updatedMovie.getCast().contains(darkNightRisesCrew));
 
 
     }
