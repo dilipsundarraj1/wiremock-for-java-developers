@@ -16,11 +16,9 @@ import static com.learnwiremock.constants.MovieAppConstants.*;
 public class MoviesRestClient {
 
     private WebClient webClient;
-    private String baseUrl;
 
-    public MoviesRestClient(String _baseUrl, WebClient _webClient) {
+    public MoviesRestClient(WebClient _webClient) {
         this.webClient = _webClient;
-        this.baseUrl = _baseUrl;
     }
 
     /**
@@ -29,7 +27,7 @@ public class MoviesRestClient {
      * @return
      */
     public List<Movie> retrieveAllMovies() {
-        String getAllMoviesUrl = baseUrl + GET_ALL_MOVIES_V1;
+        String getAllMoviesUrl = GET_ALL_MOVIES_V1;
         List<Movie> movieList;
         try {
             movieList = webClient.get().uri(getAllMoviesUrl)
@@ -48,7 +46,7 @@ public class MoviesRestClient {
     }
 
     public Movie retrieveMovieById(Integer movieId) {
-        String movieByIdURL = baseUrl + MOVIE_BY_ID_PATH_PARAM_V1;
+        String movieByIdURL =  MOVIE_BY_ID_PATH_PARAM_V1;
         Movie movie;
         try {
             movie = webClient.get().uri(movieByIdURL, movieId) //mapping the movie id to the url
@@ -69,10 +67,10 @@ public class MoviesRestClient {
     public List<Movie> retrieveMovieByName(String movieName) {
 
         List<Movie> movieList = null;
-        URI retrieveByNameUri = UriComponentsBuilder.fromUriString(baseUrl + MOVIE_BY_NAME_QUERY_PARAM_V1)
+        String retrieveByNameUri = UriComponentsBuilder.fromUriString( MOVIE_BY_NAME_QUERY_PARAM_V1)
                 .queryParam("movie_name", movieName)
                 .buildAndExpand()
-                .toUri();
+                .toUriString();
 
         try {
             movieList = webClient.get().uri(retrieveByNameUri)
@@ -98,10 +96,10 @@ public class MoviesRestClient {
      * @return - List<Movie>
      */
     public List<Movie> retreieveMovieByYear(Integer year) {
-        URI retrieveByYearUri = UriComponentsBuilder.fromUriString(baseUrl + MOVIE_BY_YEAR_QUERY_PARAM_V1)
+        String retrieveByYearUri = UriComponentsBuilder.fromUriString( MOVIE_BY_YEAR_QUERY_PARAM_V1)
                 .queryParam("year", year)
                 .buildAndExpand()
-                .toUri();
+                .toUriString();
         List<Movie> movieList;
 
         try {
@@ -130,7 +128,7 @@ public class MoviesRestClient {
         Movie movie;
 
         try {
-            movie = webClient.post().uri(baseUrl + ADD_MOVIE_V1)
+            movie = webClient.post().uri( ADD_MOVIE_V1)
                     .syncBody(newMovie)
                     .retrieve()
                     .bodyToMono(Movie.class)
@@ -150,7 +148,7 @@ public class MoviesRestClient {
         Movie updatedMovie;
 
         try {
-            updatedMovie = webClient.put().uri(baseUrl + MOVIE_BY_ID_PATH_PARAM_V1, movieId)
+            updatedMovie = webClient.put().uri( MOVIE_BY_ID_PATH_PARAM_V1, movieId)
                     .syncBody(movie)
                     .retrieve()
                     .bodyToMono(Movie.class)
@@ -171,7 +169,7 @@ public class MoviesRestClient {
 
        String response;
         try {
-            response = webClient.delete().uri(baseUrl + MOVIE_BY_ID_PATH_PARAM_V1, movieId)
+            response = webClient.delete().uri( MOVIE_BY_ID_PATH_PARAM_V1, movieId)
                     .retrieve()
                     .bodyToMono(String.class)
                     .block();
