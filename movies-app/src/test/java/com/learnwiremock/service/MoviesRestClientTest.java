@@ -14,18 +14,17 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class MoviesServiceTest {
+public class MoviesRestClientTest {
 
     MoviesRestClient moviesRestClient = null;
-    WebClient webClient;
+    WebClient webClient = null;
 
     @BeforeEach
     void setUp() {
         int port = 8081;
-        System.out.println("Movies Port : " + port);
-        final String baseUrl = String.format("http://localhost:%s", port);
-        webClient = WebClient.create();
-        moviesRestClient = new MoviesRestClient(baseUrl, webClient);
+        final String baseUrl = String.format("http://localhost:%s/", port);
+        webClient = WebClient.create(baseUrl);
+        moviesRestClient = new MoviesRestClient(webClient);
 
     }
 
@@ -80,7 +79,7 @@ public class MoviesServiceTest {
         //given
         String movieName = "ABC";
 
-        //when
+        //whenretrieveMovieByYear
         Assertions.assertThrows(MovieErrorResponse.class, () -> moviesRestClient.retrieveMovieByName(movieName));
     }
 
