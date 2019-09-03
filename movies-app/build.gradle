@@ -10,8 +10,6 @@ sourceCompatibility = '1.8'
 
 repositories {
     mavenCentral()
-    maven { url "https://repository.mulesoft.org/nexus/content/repositories/public/" }
-
 }
 
 test{
@@ -37,12 +35,6 @@ dependencies {
 
     //junit5-dependencies
     testImplementation("org.junit.jupiter:junit-jupiter-engine:5.5.1")
-
-    //wiremock
-    testImplementation "com.github.tomakehurst:wiremock-jre8-standalone:2.24.1"
-    implementation "com.github.JensPiegsa:wiremock-extension:0.4.0"
-
-
 }
 
 
