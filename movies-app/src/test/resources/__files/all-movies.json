@@ -1,0 +1,72 @@
+[
+  {
+    "movie_id": 1,
+    "name": "Batman Begins",
+    "year": 2005,
+    "cast": "Christian Bale, Katie Holmes , Liam Neeson",
+    "release_date": "2005-06-15"
+  },
+  {
+    "movie_id": 2,
+    "name": "Dark Knight",
+    "year": 2008,
+    "cast": "Christian Bale, Heath Ledger , Michael Caine",
+    "release_date": "2008-07-18"
+  },
+  {
+    "movie_id": 3,
+    "name": "The Dark Knight Rises",
+    "year": 2012,
+    "cast": "Christian Bale, Heath Ledger , Michael Caine",
+    "release_date": "2012-07-20"
+  },
+  {
+    "movie_id": 4,
+    "name": "The Avengers",
+    "year": 2012,
+    "cast": "Robert Downey Jr, Chris Evans , Chris HemsWorth",
+    "release_date": "2012-05-04"
+  },
+  {
+    "movie_id": 5,
+    "name": "Avengers: Age of Ultron",
+    "year": 2015,
+    "cast": "Robert Downey Jr, Chris Evans , Chris HemsWorth",
+    "release_date": "2015-05-01"
+  },
+  {
+    "movie_id": 6,
+    "name": "Avengers: Infinity War",
+    "year": 2018,
+    "cast": "Robert Downey Jr, Chris Evans , Chris HemsWorth",
+    "release_date": "2018-04-27"
+  },
+  {
+    "movie_id": 7,
+    "name": "Avengers: End Game",
+    "year": 2019,
+    "cast": "Robert Downey Jr, Chris Evans , Chris HemsWorth",
+    "release_date": "2019-04-26"
+  },
+  {
+    "movie_id": 8,
+    "name": "The Hangover",
+    "year": 2009,
+    "cast": "Bradley Cooper, Ed Helms , Zach Galifianakis",
+    "release_date": "2009-06-05"
+  },
+  {
+    "movie_id": 9,
+    "name": "The Imitation Game",
+    "year": 2014,
+    "cast": "Benedict Cumberbatch, Keira Knightley",
+    "release_date": "2014-12-25"
+  },
+  {
+    "movie_id": 10,
+    "name": "The Departed",
+    "year": 2006,
+    "cast": "Leonardo DiCaprio, Matt Damon , Mark Wahlberg",
+    "release_date": "2006-10-06"
+  }
+]

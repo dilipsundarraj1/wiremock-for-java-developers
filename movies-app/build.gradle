@@ -10,6 +10,8 @@ sourceCompatibility = '1.8'
 
 repositories {
     mavenCentral()
+    maven { url "https://repository.mulesoft.org/nexus/content/repositories/public/" }
+
 }
 
 test{
@@ -27,6 +29,9 @@ dependencies {
     implementation 'org.slf4j:slf4j-api:1.7.26'
     implementation 'org.slf4j:slf4j-simple:1.7.26'
 
+    //wiremock
+    testCompile "com.github.tomakehurst:wiremock-jre8-standalone:2.24.1"
+
     //jackson
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.9'
     implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.9.9'
@@ -35,6 +40,12 @@ dependencies {
 
     //junit5-dependencies
     testImplementation("org.junit.jupiter:junit-jupiter-engine:5.5.1")
+
+    //wiremock
+    testImplementation "com.github.tomakehurst:wiremock-jre8-standalone:2.24.1"
+    implementation "com.github.JensPiegsa:wiremock-extension:0.4.0"
+
+
 }
 
 
