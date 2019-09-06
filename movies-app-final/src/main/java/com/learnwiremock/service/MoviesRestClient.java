@@ -52,7 +52,7 @@ public class MoviesRestClient {
                     .bodyToMono(Movie.class) //body is converted to Mono(Represents single item)
                     .block();
         } catch (WebClientResponseException ex) {
-            log.error("WebClientResponseException - Error Message is : {} ", ex, ex.getResponseBodyAsString());
+            log.error("WebClientResponseException - Exception is {} and the Error Message is : {}", ex, ex.getResponseBodyAsString());
             throw new MovieErrorResponse(ex.getStatusText(), ex);
         } catch (Exception ex) {
             log.error("Exception - The Error Message is {} ", ex.getMessage());
@@ -77,7 +77,7 @@ public class MoviesRestClient {
                     .collectList()
                     .block();
         } catch (WebClientResponseException ex) {
-            log.error("WebClientResponseException in retrieveMovieByName - Error Message is : {} ", ex, ex.getResponseBodyAsString());
+            log.error("WebClientResponseException - Exception is {} and the Error Message is : {}", ex, ex.getResponseBodyAsString());
             throw new MovieErrorResponse(ex.getStatusText(), ex);
         } catch (Exception ex) {
             log.error("Exception - The Error Message is {} ", ex.getMessage());
