@@ -1,0 +1,7 @@
+{
+  "timestamp": "{{now}}",
+  "status": 404,
+  "error": "Not Found",
+  "message": "No Movie Available with the given name - {{request.query.movie_name}}",
+  "path": "{{request.path}}"
+}
