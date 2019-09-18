@@ -1,0 +1,28 @@
+[{
+  "movie_id": 4,
+  "name": "The {{request.query.movie_name}}",
+  "year": 2012,
+  "cast": "Robert Downey Jr, Chris Evans , Chris HemsWorth",
+  "release_date": "2012-05-04"
+},
+  {
+    "movie_id": 5,
+    "name": "{{request.query.movie_name}}: Age of Ultron",
+    "year": 2015,
+    "cast": "Robert Downey Jr, Chris Evans , Chris HemsWorth",
+    "release_date": "2015-05-01"
+  },
+  {
+    "movie_id": 6,
+    "name": "{{request.query.movie_name}}: Infinity War",
+    "year": 2018,
+    "cast": "Robert Downey Jr, Chris Evans , Chris HemsWorth",
+    "release_date": "2018-04-27"
+  },
+  {
+    "movie_id": 7,
+    "name": "{{request.query.movie_name}}: End Game",
+    "year": 2019,
+    "cast": "Robert Downey Jr, Chris Evans , Chris HemsWorth",
+    "release_date": "2019-04-26"
+  }]

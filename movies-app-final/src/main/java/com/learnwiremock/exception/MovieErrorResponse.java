@@ -1,11 +1,13 @@
 package com.learnwiremock.exception;
 
-public class MovieErrorResponse extends  RuntimeException {
+import org.springframework.web.reactive.function.client.WebClientResponseException;
 
-    public MovieErrorResponse(String message, Throwable cause) {
-        super(message, cause);
+public class MovieErrorResponse extends RuntimeException {
+    public MovieErrorResponse(String statusText, WebClientResponseException ex) {
+        super(statusText,ex);
     }
-    public MovieErrorResponse(Throwable cause) {
-        super(cause);
+
+    public MovieErrorResponse(Exception ex) {
+        super(ex);
     }
 }

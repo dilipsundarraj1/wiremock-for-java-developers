@@ -1,0 +1,16 @@
+[
+  {
+    "movie_id": 3,
+    "name": "The Dark Knight Rises",
+    "year": "{{request.query.year}}",
+    "cast": "Christian Bale, Heath Ledger , Michael Caine",
+    "release_date": "2012-07-20"
+  },
+  {
+    "movie_id": 4,
+    "name": "The Avengers",
+    "year": "{{request.query.year}}",
+    "cast": "Robert Downey Jr, Chris Evans , Chris HemsWorth",
+    "release_date": "2012-05-04"
+  }
+]
