@@ -1,0 +1,7 @@
+{
+  "movie_id": "{{request.path.[3]}}",
+  "name": "Batman Begins",
+  "year": 2005,
+  "cast": "Christian Bale, Katie Holmes , Liam Neeson",
+  "release_date": "2005-06-15"
+}

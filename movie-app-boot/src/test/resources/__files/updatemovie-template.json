@@ -1,0 +1,7 @@
+{
+  "movie_id": "{{request.path.[3]}}",
+  "name": "Batman Begins",
+  "year": 2005,
+  "cast": "Christian Bale, Heath Ledger , Michael Caine, {{jsonPath request.body '$.cast'}}",
+  "release_date": "2005-06-15"
+}
