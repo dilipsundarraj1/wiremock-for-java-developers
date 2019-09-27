@@ -1,5 +1,5 @@
 {
-  "movie_id": 1,
+  "movie_id": "{{randomValue length=2 type='NUMERIC'}}",
   "name": "{{jsonPath request.body '$.name'}}",
   "year": "{{jsonPath request.body '$.year'}}",
   "cast": "{{jsonPath request.body '$.cast'}}",
