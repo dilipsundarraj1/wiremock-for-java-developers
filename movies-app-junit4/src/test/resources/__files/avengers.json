@@ -1,10 +1,11 @@
-[{
-  "movie_id": 4,
-  "name": "The Avengers",
-  "year": 2012,
-  "cast": "Robert Downey Jr, Chris Evans , Chris HemsWorth",
-  "release_date": "2012-05-04"
-},
+[
+  {
+    "movie_id": 4,
+    "name": "The Avengers",
+    "year": 2012,
+    "cast": "Robert Downey Jr, Chris Evans , Chris HemsWorth",
+    "release_date": "2012-05-04"
+  },
   {
     "movie_id": 5,
     "name": "Avengers: Age of Ultron",
@@ -25,4 +26,5 @@
     "year": 2019,
     "cast": "Robert Downey Jr, Chris Evans , Chris HemsWorth",
     "release_date": "2019-04-26"
-  }]
+  }
+]
