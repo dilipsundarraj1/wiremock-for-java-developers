@@ -1,0 +1,7 @@
+{
+  "timestamp": "{{now}}",
+  "status": 400,
+  "error": "Bad Request",
+  "message": "Please pass all the input fields : [name]",
+  "path": "{{request.path}}"
+}

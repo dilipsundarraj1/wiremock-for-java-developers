@@ -14,6 +14,7 @@ repositories {
 
 }
 
+
 dependencies {
     //webclient-dependencies
     implementation 'org.springframework:spring-webflux:5.1.8.RELEASE'
@@ -34,12 +35,7 @@ dependencies {
     //junit4-dependencies
     testImplementation "junit:junit:4.12"
 
-
     //wiremock
     testImplementation "com.github.tomakehurst:wiremock-jre8-standalone:2.24.1"
-
-
-
 }
-
 
