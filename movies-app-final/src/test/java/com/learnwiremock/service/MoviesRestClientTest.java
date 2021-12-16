@@ -23,6 +23,7 @@ import org.springframework.web.reactive.function.client.WebClientResponseExcepti
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Random;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
 import static com.github.tomakehurst.wiremock.client.WireMock.verify;
@@ -299,7 +300,32 @@ public class MoviesRestClientTest {
                 .willReturn(WireMock.aResponse()
                         .withStatus(HttpStatus.OK.value())
                         .withHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
+                        .withTransformers("Random-Value")
+                        .withTransformerParameter("id", new Random().nextDouble())
                         .withBodyFile("add-movie-template.json")));
+
+        //when
+        Movie addedMovie = moviesRestClient.addMovie(movie);
+        System.out.println(addedMovie);
+
+        //then
+        assertTrue(addedMovie.getMovie_id() != null);
+    }
+
+    @Test
+    void addMovie_responseTemplating_approach1() {
+        //given
+        Movie movie = new Movie(null, "Toys Story 4", "Tom Hanks, Tim Allen", 2019, LocalDate.of(2019, 06, 20));
+        stubFor(post(urlPathEqualTo(ADD_MOVIE_V1))
+                // .withQueryParam("movie_name", equalTo(movieName) )
+                .withRequestBody(matchingJsonPath(("$.name"),equalTo("Toys Story 4")))
+                .withRequestBody(matchingJsonPath(("$.cast"), containing("Tom")))
+                .willReturn(WireMock.aResponse()
+                        .withStatus(HttpStatus.OK.value())
+                        .withHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
+                        .withTransformers("Random-Value")
+                        .withTransformerParameter("id", new Random().nextDouble())
+                        .withBodyFile("add-movie-template-approach1.json")));
 
         //when
         Movie addedMovie = moviesRestClient.addMovie(movie);
