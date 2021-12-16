@@ -11,11 +11,10 @@ package com.learnwiremock.dto;
 @AllArgsConstructor
 public class Movie {
 
-    public Long movie_id;
+    public Double movie_id;
     public String name;
     public String cast;
     public Integer year;
     public LocalDate release_date;
-
 
 }
